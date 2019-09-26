@@ -31,6 +31,8 @@ public class ControllerTela {
     Estrela estrela ;
     Largura largura;
     private final Runtime run ;
+
+    private final String defaultPath = "C:\\Users\\rafae\\Documents\\GitHub\\Busca-A-Estrela\\src\\estrelafoda\\imagens\\";
     
     public ControllerTela(Tela tela){
         this.tela = tela;
@@ -51,7 +53,9 @@ public class ControllerTela {
                 String aux[];
                 //System.out.println(x);
                 aux = x.split("x");
-                ((JLabel)(mapa[Integer.valueOf(aux[0])][Integer.valueOf(aux[1])].getComponent(0))).setIcon(new ImageIcon("/home/nogueira/NetBeansProjects/estrelaCaralhuda/src/estrelafoda/imagens/agente.png"));
+                ((JLabel)(mapa[Integer.valueOf(aux[0])][Integer.valueOf(aux[1])].getComponent(0))).setIcon(
+                    new ImageIcon(defaultPath.concat("agente.png"))
+                    );
             });
             Integer x = 0;
             Integer y = 0;
@@ -62,7 +66,9 @@ public class ControllerTela {
             y = Integer.valueOf(vet[1]);
             
             
-            ((JLabel)(mapa[x][y].getComponent(0))).setIcon(new ImageIcon("/home/nogueira/NetBeansProjects/estrelaCaralhuda/src/estrelafoda/imagens/recompensa.png"));
+            ((JLabel)(mapa[x][y].getComponent(0))).setIcon(
+                new ImageIcon(defaultPath.concat("recompensa.png"))
+                );
              
             
             tela.getjButtonIniciar().setEnabled(false);
@@ -86,7 +92,9 @@ public class ControllerTela {
                 String aux[];
                 //System.out.println(x);
                 aux = x.split("x");
-                ((JLabel)(mapa[Integer.valueOf(aux[0])][Integer.valueOf(aux[1])].getComponent(0))).setIcon(new ImageIcon("/home/nogueira/NetBeansProjects/estrelaCaralhuda/src/estrelafoda/imagens/agente.png"));
+                ((JLabel)(mapa[Integer.valueOf(aux[0])][Integer.valueOf(aux[1])].getComponent(0))).setIcon(
+                    new ImageIcon(defaultPath.concat("agente.png"))
+                    );
                
             });
            
@@ -99,7 +107,9 @@ public class ControllerTela {
             y = Integer.valueOf(vet[1]);
             
             
-            ((JLabel)(mapa[x][y].getComponent(0))).setIcon(new ImageIcon("/home/nogueira/NetBeansProjects/estrelaCaralhuda/src/estrelafoda/imagens/recompensa.png"));
+            ((JLabel)(mapa[x][y].getComponent(0))).setIcon(
+                new ImageIcon(defaultPath.concat("recompensa.png"))
+                );
                
             tela.getjButtonIniciar().setEnabled(false);
             tela.getjButton1().setEnabled(true);
@@ -144,19 +154,27 @@ public class ControllerTela {
                         break;
                     case 1000:
                         mapa[i][j].setBackground(Color.WHITE);
-                        ((JLabel)(mapa[i][j].getComponent(0))).setIcon(new ImageIcon(("/home/nogueira/NetBeansProjects/estrelaCaralhuda/src/estrelafoda/imagens/parede.png")));
+                        ((JLabel)(mapa[i][j].getComponent(0))).setIcon(
+                            new ImageIcon(defaultPath.concat("\\parede.png"))
+                            );
                         break;
                     default:
-                        ((JLabel)(mapa[i][j].getComponent(0))).setIcon(new ImageIcon("/home/nogueira/NetBeansProjects/estrelaCaralhuda/src/estrelafoda/imagens/moeda.png"));
+                        ((JLabel)(mapa[i][j].getComponent(0))).setIcon(
+                            new ImageIcon(defaultPath.concat("moeda.png"))
+                            );
                         break;
                 }
                 
                 if(i==0 && j==0){
-                    ((JLabel)(mapa[i][j].getComponent(0))).setIcon(new ImageIcon("/home/nogueira/NetBeansProjects/estrelaCaralhuda/src/estrelafoda/imagens/agente.png"));
+                    ((JLabel)(mapa[i][j].getComponent(0))).setIcon(
+                        new ImageIcon(defaultPath.concat("agente.png"))
+                        );
                 }
                 if(destino.equals(String.valueOf(i)+"x"+String.valueOf(j))){
                     mapa[i][j].setBackground(Color.WHITE);
-                    ((JLabel)(mapa[i][j].getComponent(0))).setIcon(new ImageIcon("/home/nogueira/NetBeansProjects/estrelaCaralhuda/src/estrelafoda/imagens/recompensa.png"));
+                    ((JLabel)(mapa[i][j].getComponent(0))).setIcon(
+                        new ImageIcon(defaultPath.concat("recompensa.png"))
+                        );
                 }     
                 
             }
